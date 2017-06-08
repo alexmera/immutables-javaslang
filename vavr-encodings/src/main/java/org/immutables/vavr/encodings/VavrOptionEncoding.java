@@ -23,11 +23,25 @@ import org.immutables.encode.Encoding;
 class VavrOptionEncoding<T>
 {
   @Encoding.Impl
-  private Option<T> field;
+  private Option<T> field = Option.none();
 
   VavrOptionEncoding()
   {
 
+  }
+
+  @Encoding.Copy
+  public Option<T> with(final Option<T> value) {
+    return value != null ? value : Option.none();
+  }
+  @Encoding.Copy
+  public Option<T> withValue(final T value) {
+    return value != null ? Option.some(value) : Option.none();
+  }
+
+  @Encoding.Of
+  private static <T> Option<T> init(final Option<T> option) {
+    return option != null ? option : Option.none();
   }
 
   @Encoding.Builder

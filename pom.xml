@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.immutables.vavr</groupId>
   <artifactId>vavr</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 
   <packaging>pom</packaging>
   <name>vavr</name>
@@ -24,6 +24,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>bintray-alexmera-mvn</id>
+      <name>alexmera-mvn</name>
+      <url>https://api.bintray.com/maven/alexmera/mvn/immutables-vavr/;publish=1</url>
+    </repository>
+  </distributionManagement>
 
   <scm>
     <url>https://github.com/alexmera/immutables-vavr</url>
@@ -59,21 +67,9 @@
     <system>GitHub Issues</system>
   </issueManagement>
 
-  <distributionManagement>
-    <site>
-      <id>GitHub</id>
-      <name>GitHub</name>
-      <url>http://immutables.github.io/</url>
-    </site>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
   <ciManagement>
     <system>Travis CI</system>
-    <url>https://travis-ci.org/immutables/immutables-javaslang</url>
+    <url>https://travis-ci.org/alexmera/immutables-vavr</url>
   </ciManagement>
 
   <prerequisites>
@@ -97,7 +93,6 @@
         <artifactId>vavr</artifactId>
         <version>0.9.0</version>
       </dependency>
-
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
